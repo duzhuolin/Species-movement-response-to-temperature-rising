@@ -30,9 +30,10 @@ for(r in 2:landscape){
 #initialize the landscape with elevation
 land.elev=matrix(nrow=landscape,ncol=landscape)
 
+
 #determine the initial temperature of patches
-#Temperature falls by 0.8¡æ for 1¡ã of latitudinal increase
-#Temperature falls by 0.65¡æ for 100 meters of altitudinal increase
+#Temperature falls by 0.8â„ƒ for 1Â° of latitudinal increase
+#Temperature falls by 0.65â„ƒ for 100 meters of altitudinal increase
 land.temp=matrix(nrow=landscape,ncol=landscape)
 land.temp=init.temp-(land.lat-init.lat)*0.8-land.elev*0.65/100
 image(land.temp)
