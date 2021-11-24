@@ -1,0 +1,10 @@
+Comparetemp=function(a,b,loc.x,loc.y,stpsz){
+  if(a<(stpsz+1)){loc.x=loc.x-(stpsz+1-a)}
+  if(a==(stpsz+1)){loc.x=loc.x}
+  if(a>(stpsz+1)){loc.x=loc.x+(a-stpsz-1)}
+  if(b<(stpsz+1)){loc.y=loc.y-(stpsz+1-b)}
+  if(b==(stpsz+1)){loc.y=loc.y}
+  if(b>(stpsz+1)){loc.y=loc.y+(b-stpsz-1)}
+  point=c(loc.x,loc.y)
+  return(point)
+}
