@@ -1,12 +1,2 @@
 # Species_movement_response_to_temperature_rising
-How different species residing in different temperature range response to the rising temperature resulted from climate change
-
-Unsovled problems 
-1. Using which distribution to assign the elelvation to each patch so that there will ba sevaral peaks and also the elevation changes smoothly. 
-spline function
-
-3. How to realize the species' ability to sense that one or several adjecent patches have been occupied by another species so that it can avoid moving to occupied patch. 
-Set priority of all species or random selection among adjecent species to determine the moving order.
-
-4. How to avoid errors when the species moves to the border of map? 
-bouncing back/set up barrier/try function
+This model has two entities, species and landscape. Every species has respective thermal tolerance determined by initial temperature of the patch where it resides at the beginning. Initial temperature of each patch is caculated by its elevation and latitude depending on a selected point from the real world map. Temperature changes progress at varied anual rates. When the temperature of the patch rises to  the  tolerance  temperature  of  the  species  that  resides  on  this  patch,  the  species  will move to an adjacent patch possessing a satisfactory temperature. Step sizes are adjustable. The basic principle of this model is climate-driven changes in the geographical distribution of species, simulating the emergence of poleward and uphill shifts of species. The species are able to sense the change of temperature and make adaptive behavior, e.g., emigration. Likelihood of species moving to coolest adjecent patch is set to mount the stochasticity. The simulation will run for 300 years.
