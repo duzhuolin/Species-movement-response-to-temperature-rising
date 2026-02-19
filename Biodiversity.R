@@ -5,7 +5,7 @@ source(paste(directory, "/source/Comparetemp.R", sep=''))
 library(raster)
 
 #parameters
-landscape=500 #number of patches=landscape^2,virtually representing a 5°x5° area in real world
+landscape=500 #number of patches=landscape^2,virtually representing a 5Â°x5Â° area in real world
 coor.nwp=c(100,30) #coordinate(longitude,latitude) of the most northwestern point in the landscape
 init.temp=25 #temperature at sea level on the latitude of landscape boundary near the equator
 mean.temp=0.05 #mean of increment of temperature per year
@@ -24,7 +24,7 @@ for(m in 1:length(move.lkl)){
    #initialize the landscape with latitude
    land.lat=matrix(nrow=landscape,ncol=landscape)
    land.lat[landscape,]=coor.nwp[2]
-   #latitudinal span from northmost to southmost of the landscape is 5°
+   #latitudinal span from northmost to southmost of the landscape is 5Â°
    incre.lat=round(5/(landscape-1),2) #increment of latitude between two adjacent patches on latitudinal direction
    for(r in (landscape-1):1){
      land.lat[r,]=land.lat[r+1,]-incre.lat
@@ -40,8 +40,8 @@ for(m in 1:length(move.lkl)){
    }
 
    #determine the initial temperature of patches
-   #Temperature falls by 0.8° for 1° of latitudinal increase
-   #Temperature falls by 0.65° for 100 meters of altitudinal increase
+   #Temperature falls by 0.8Â° for 1Â° of latitudinal increase
+   #Temperature falls by 0.65Â° for 100 meters of altitudinal increase
    land.temp=matrix(nrow=landscape,ncol=landscape)
    land.temp=t(round(init.temp-(land.lat-land.lat[1,1])*0.8-land.elev*0.65/100,2))
    image(land.temp)
@@ -121,9 +121,12 @@ for(m in 1:length(move.lkl)){
      }
      lines(mvmt[seq(1,length(mvmt), 2)]/landscape, mvmt[seq(2,length(mvmt), 2)]/landscape, lwd=0.6)
      pathways=rbind(pathways,mvmt)
+
+     #jdjd
    }
    rownames(pathways) = seq(1,num.spe,1)
    write.table(pathways, paste(out.dir, "/SpeciesMoveInMountain_", rep, ".csv", sep=""), row.names=F, col.names=F, sep=",")
    dev.off()
   }
 }
+
