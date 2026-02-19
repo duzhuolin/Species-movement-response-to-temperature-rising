@@ -122,11 +122,11 @@ for(m in 1:length(move.lkl)){
      lines(mvmt[seq(1,length(mvmt), 2)]/landscape, mvmt[seq(2,length(mvmt), 2)]/landscape, lwd=0.6)
      pathways=rbind(pathways,mvmt)
 
-     #jdjd
    }
    rownames(pathways) = seq(1,num.spe,1)
    write.table(pathways, paste(out.dir, "/SpeciesMoveInMountain_", rep, ".csv", sep=""), row.names=F, col.names=F, sep=",")
    dev.off()
   }
 }
+
 
